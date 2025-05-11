@@ -1,2 +1,2 @@
 # Minecraft-Discord-Bot
-Some discord bot integration with a Minecraft server plugin
+Discord bot integration with a Minecraft server plugin.

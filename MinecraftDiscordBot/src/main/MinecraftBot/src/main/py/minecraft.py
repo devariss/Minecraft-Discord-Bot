@@ -13,7 +13,7 @@ class Player:
         self.skin_url: Final[str] = json.loads(base64.b64decode(requests.get(f"https://sessionserver.mojang.com/session/minecraft/profile/{self.uuid}?unsigned=false").json()["properties"][0]["value"]))["textures"]["SKIN"]["url"]
 
     def get_head_texture(self, size: tuple[int, int] = (8, 8)) -> bytes:
-        with Image.open(BytesIO(requests.get(self.skin_url).content)).crop((8, 8, 16, 16)).resize(size, resample=Image.NEAREST) as head_image:
+        with Image.open(BytesIO(requests.get(self.skin_url).content)).crop((8, 8, 16, 16)).resize(size, resample=Image.Resampling.NEAREST) as head_image:
             with BytesIO() as buffer:
                 head_image.save(buffer, format="PNG")
                 buffer.seek(0)

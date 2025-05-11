@@ -1,0 +1,4 @@
+name: DiscordBotPlugin
+version: '0.1'
+main: net.devariss.discordbotplugin.DiscordBotPlugin
+api-version: '1.21'

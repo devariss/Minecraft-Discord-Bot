@@ -1,0 +1,4 @@
+﻿.idea
+*.gz
+*.log
+MinecraftDiscordBot/test/server/.console_history

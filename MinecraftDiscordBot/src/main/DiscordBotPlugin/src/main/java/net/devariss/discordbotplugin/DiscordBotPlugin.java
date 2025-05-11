@@ -95,13 +95,11 @@ public final class DiscordBotPlugin extends JavaPlugin {
                     String jsonStr = botHostRequest.substring(sepIndex + 1);
                     String request = botHostRequest.substring(0, sepIndex);
                     switch (request) {
-                        case "MESSAGE":
+                        case "MESSAGE" -> {
                             var message = new Gson().fromJson(jsonStr, DiscordMessage.class);
                             getServer().broadcastMessage("<%s: @%s> %s".formatted(message.channel, message.name, message.content));
-                            break;
-                        default:
-                            getLogger().warning("Invalid request given (%s)".formatted(request));
-                            break;
+                        }
+                        default -> getLogger().warning("Invalid request given (%s)".formatted(request));
                     }
                 }
                 catch (final IOException E) {
